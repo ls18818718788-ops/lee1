@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>毕业作品展示｜蓝橙主题</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --brand-blue:#0ea5e9;
+      --brand-blue-dark:#0369a1;
+      --brand-orange:#f97316;
+      --brand-orange-dark:#9a3412;
+    }
+    html,body{font-family:'Noto Sans SC',system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;}
+    .brand-gradient{background: linear-gradient(135deg,var(--brand-blue) 0%, var(--brand-orange) 100%);}    
+    .video-shadow{box-shadow:0 10px 30px rgba(3,105,161,.25);}    
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+  <header class="sticky top-0 z-50 bg-white/80 backdrop-blur border-b">
+    <nav class="container mx-auto px-4 md:px-8 py-3 flex items-center justify-between">
+      <a href="#home" class="flex items-center space-x-2">
+        <span class="inline-block w-3 h-3 rounded-full" style="background:var(--brand-orange)"></span>
+        <span class="text-lg md:text-xl font-bold" style="color:var(--brand-blue-dark)">毕业作品展示</span>
+      </a>
+      <div class="hidden md:flex items-center space-x-6 text-sm font-medium">
+        <a href="#intro" class="hover:text-sky-700">项目简介</a>
+        <a href="#research" class="hover:text-sky-700">调研</a>
+        <a href="#avatar" class="hover:text-sky-700">数字人</a>
+        <a href="#experience" class="hover:text-sky-700">体验/水下</a>
+        <a href="#exhibition" class="hover:text-sky-700">展览与应用</a>
+        <a href="#contact" class="hover:text-sky-700">联系</a>
+      </div>
+    </nav>
+  </header>
+
+  <section id="home" class="brand-gradient text-white">
+    <div class="container mx-auto px-4 md:px-8 py-14 md:py-20 grid md:grid-cols-2 gap-8 items-center">
+      <div class="space-y-5">
+        <h1 class="text-3xl md:text-5xl font-extrabold leading-tight">非遗 × 数字人 × 沉浸体验</h1>
+        <p class="text-white/90 md:text-lg">以蓝橙为主色的毕业作品网页，聚焦研究调研、数字人设计与跨场景应用，结合体验设计、水下影像与展览实践。</p>
+      </div>
+      <div>
+        <video class="w-full rounded-xl video-shadow" src="videos/hero.mp4" poster="images/hero_poster.jpg" autoplay muted loop playsinline></video>
+      </div>
+    </div>
+  </section>
+
+  <section id="research" class="bg-gray-50 py-14 md:py-20">
+    <div class="container mx-auto px-4 md:px-8">
+      <h2 class="text-2xl md:text-3xl font-bold mb-6" style="color:var(--brand-blue-dark)">前期调研</h2>
+      <div class="grid md:grid-cols-2 gap-6 mb-8">
+        <video class="w-full rounded-xl video-shadow" src="videos/research_01.mp4" poster="images/research_p01.jpg" controls></video>
+        <video class="w-full rounded-xl video-shadow" src="videos/research_02.mp4" poster="images/research_p02.jpg" controls></video>
+      </div>
+      <div class="grid grid-cols-2 md:grid-cols-5 gap-4">
+        <img src="images/research_p01.jpg" class="rounded-lg" alt="调研1"/>
+        <img src="images/research_p02.jpg" class="rounded-lg" alt="调研2"/>
+        <img src="images/research_p03.jpg" class="rounded-lg" alt="调研3"/>
+        <img src="images/research_p04.jpg" class="rounded-lg" alt="调研4"/>
+        <img src="images/research_p05.jpg" class="rounded-lg" alt="调研5"/>
+      </div>
+    </div>
+  </section>
+
+  <section id="avatar" class="bg-white py-14 md:py-20">
+    <div class="container mx-auto px-4 md:px-8">
+      <h2 class="text-2xl md:text-3xl font-bold mb-6" style="color:var(--brand-blue-dark)">数字人设计与应用</h2>
+      <div class="grid lg:grid-cols-3 gap-6">
+        <img class="w-full rounded-xl video-shadow" src="images/avatar_original.jpg" alt="数字人原图"/>
+        <video class="w-full rounded-xl video-shadow" src="videos/avatar_cn.mp4" poster="images/avatar_cn.jpg" controls></video>
+        <video class="w-full rounded-xl video-shadow" src="videos/avatar_th_app.mp4" poster="images/avatar_th.jpg" controls></video>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience" class="bg-gray-50 py-14 md:py-20">
+    <div class="container mx-auto px-4 md:px-8">
+      <h2 class="text-2xl md:text-3xl font-bold mb-6" style="color:var(--brand-blue-dark)">体验与水下影像</h2>
+      <div class="grid md:grid-cols-2 gap-6 mb-8">
+        <video class="w-full rounded-xl video-shadow" src="videos/experience.mp4" poster="images/experience.jpg" controls></video>
+        <video class="w-full rounded-xl video-shadow" src="videos/underwater.mp4" poster="images/underwater.jpg" controls></video>
+      </div>
+      <div class="grid grid-cols-2 md:grid-cols-6 gap-4">
+        <img src="images/under_p01.jpg" class="rounded-lg" alt="水下1"/>
+        <img src="images/under_p02.jpg" class="rounded-lg" alt="水下2"/>
+        <img src="images/under_p03.jpg" class="rounded-lg" alt="水下3"/>
+        <img src="images/under_p04.jpg" class="rounded-lg" alt="水下4"/>
+        <img src="images/under_p05.jpg" class="rounded-lg" alt="水下5"/>
+        <img src="images/under_p06.jpg" class="rounded-lg" alt="水下6"/>
+      </div>
+    </div>
+  </section>
+
+  <section id="exhibition" class="bg-white py-14 md:py-20">
+    <div class="container mx-auto px-4 md:px-8">
+      <h2 class="text-2xl md:text-3xl font-bold mb-6" style="color:var(--brand-blue-dark)">展览与应用</h2>
+      <div class="grid md:grid-cols-2 gap-6 mb-8">
+        <video class="w-full rounded-xl video-shadow" src="videos/exhibition.mp4" poster="images/exhibition.jpg" controls></video>
+        <video class="w-full rounded-xl video-shadow" src="videos/application.mp4" poster="images/application.jpg" controls></video>
+      </div>
+      <div class="grid grid-cols-2 md:grid-cols-5 gap-4 mb-8">
+        <img src="images/expo_p01.jpg" class="rounded-lg" alt="展览1"/>
+        <img src="images/expo_p02.jpg" class="rounded-lg" alt="展览2"/>
+        <img src="images/expo_p03.jpg" class="rounded-lg" alt="展览3"/>
+        <img src="images/expo_p04.jpg" class="rounded-lg" alt="展览4"/>
+        <img src="images/expo_p05.jpg" class="rounded-lg" alt="展览5"/>
+        <img src="images/expo_p06.jpg" class="rounded-lg" alt="展览6"/>
+        <img src="images/expo_p07.jpg" class="rounded-lg" alt="展览7"/>
+        <img src="images/expo_p08.jpg" class="rounded-lg" alt="展览8"/>
+        <img src="images/expo_p09.jpg" class="rounded-lg" alt="展览9"/>
+        <img src="images/expo_p10.jpg" class="rounded-lg" alt="展览10"/>
+      </div>
+      <video class="w-full rounded-xl video-shadow" src="videos/aigc_en.mp4" poster="images/aigc_en.jpg" controls></video>
+    </div>
+  </section>
+
+  <section id="contact" class="py-14 md:py-20" style="background:var(--brand-blue-dark)">
+    <div class="container mx-auto px-4 md:px-8 text-white">
+      <h2 class="text-2xl md:text-3xl font-bold mb-4">联系与致谢</h2>
+      <p class="text-white/90 mb-6">在此放置导师、合作院校与展览支持单位信息；可添加二维码或邮箱。</p>
+      <a href="mailto:your-email@example.com" class="px-6 py-3 bg-orange-500 hover:bg-orange-600 rounded-lg font-semibold">发送邮件</a>
+    </div>
+  </section>
+</body>
+</html>
