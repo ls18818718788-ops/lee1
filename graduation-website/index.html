@@ -8,17 +8,18 @@
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
   <style>
     :root{
-      --brand-blue:#0ea5e9;
-      --brand-blue-dark:#0369a1;
-      --brand-orange:#f97316;
-      --brand-orange-dark:#9a3412;
+      --brand-blue:#0ea5e9;          /* 蓝主色 */
+      --brand-blue-dark:#0369a1;     /* 蓝深色（标题） */
+      --brand-orange:#f97316;        /* 橙主色（按钮/强调） */
+      --brand-orange-dark:#9a3412;   /* 橙深色 */
     }
     html,body{font-family:'Noto Sans SC',system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;}
-    .brand-gradient{background: linear-gradient(135deg,var(--brand-blue) 0%, var(--brand-orange) 100%);}    
-    .video-shadow{box-shadow:0 10px 30px rgba(3,105,161,.25);}    
+    .brand-gradient{background: linear-gradient(135deg,var(--brand-blue) 0%, var(--brand-orange) 100%);}
+    .video-shadow{box-shadow:0 10px 30px rgba(3,105,161,.25);}
   </style>
 </head>
 <body class="bg-gray-50 text-gray-800">
+  <!-- Header -->
   <header class="sticky top-0 z-50 bg-white/80 backdrop-blur border-b">
     <nav class="container mx-auto px-4 md:px-8 py-3 flex items-center justify-between">
       <a href="#home" class="flex items-center space-x-2">
@@ -36,6 +37,7 @@
     </nav>
   </header>
 
+  <!-- Hero -->
   <section id="home" class="brand-gradient text-white">
     <div class="container mx-auto px-4 md:px-8 py-14 md:py-20 grid md:grid-cols-2 gap-8 items-center">
       <div class="space-y-5">
@@ -43,11 +45,35 @@
         <p class="text-white/90 md:text-lg">以蓝橙为主色的毕业作品网页，聚焦研究调研、数字人设计与跨场景应用，结合体验设计、水下影像与展览实践。</p>
       </div>
       <div>
+        <!-- 首页主视频（建议 AIGC 英文版或体验设计） -->
         <video class="w-full rounded-xl video-shadow" src="videos/hero.mp4" poster="images/hero_poster.jpg" autoplay muted loop playsinline></video>
       </div>
     </div>
   </section>
 
+  <!-- 项目简介（可写120–180字摘要） -->
+  <section id="intro" class="bg-white">
+    <div class="container mx-auto px-4 md:px-8 py-14 md:py-20">
+      <h2 class="text-2xl md:text-3xl font-bold mb-3" style="color:var(--brand-blue-dark)">项目简介</h2>
+      <p class="text-gray-600 max-w-3xl">在此概述你的核心命题、方法与成果：从“身体驱动—沉浸体验—文化认同—活态传承”的链式机制，落到数字人设计与多场景应用，配合展览转化与跨语种传播。</p>
+      <div class="mt-8 grid md:grid-cols-3 gap-6">
+        <div class="p-5 rounded-xl border bg-white">
+          <h3 class="font-semibold mb-2 text-gray-900">研究关键词</h3>
+          <p class="text-gray-600 text-sm">数字非遗、具身认知、AIGC、XR、跨语种传播、沉浸体验</p>
+        </div>
+        <div class="p-5 rounded-xl border bg-white">
+          <h3 class="font-semibold mb-2 text-gray-900">产出清单</h3>
+          <p class="text-gray-600 text-sm">视频9个、展览照片10张、水下照片5–6张、数字人原图1张</p>
+        </div>
+        <div class="p-5 rounded-xl border bg-white">
+          <h3 class="font-semibold mb-2 text-gray-900">主色系统</h3>
+          <p class="text-gray-600 text-sm">蓝（科技） + 橙（活力），黑白为中性底</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 调研（视频2 + 照片5） -->
   <section id="research" class="bg-gray-50 py-14 md:py-20">
     <div class="container mx-auto px-4 md:px-8">
       <h2 class="text-2xl md:text-3xl font-bold mb-6" style="color:var(--brand-blue-dark)">前期调研</h2>
@@ -65,6 +91,7 @@
     </div>
   </section>
 
+  <!-- 数字人（原图1 + 中文视频1 + 泰国应用视频1） -->
   <section id="avatar" class="bg-white py-14 md:py-20">
     <div class="container mx-auto px-4 md:px-8">
       <h2 class="text-2xl md:text-3xl font-bold mb-6" style="color:var(--brand-blue-dark)">数字人设计与应用</h2>
@@ -76,6 +103,7 @@
     </div>
   </section>
 
+  <!-- 体验（水下 + 体验视频 + 水下照片5–6） -->
   <section id="experience" class="bg-gray-50 py-14 md:py-20">
     <div class="container mx-auto px-4 md:px-8">
       <h2 class="text-2xl md:text-3xl font-bold mb-6" style="color:var(--brand-blue-dark)">体验与水下影像</h2>
@@ -94,6 +122,7 @@
     </div>
   </section>
 
+  <!-- 展览与应用（展览视频1 + 照片10 + 应用视频1 + AIGC英文视频1） -->
   <section id="exhibition" class="bg-white py-14 md:py-20">
     <div class="container mx-auto px-4 md:px-8">
       <h2 class="text-2xl md:text-3xl font-bold mb-6" style="color:var(--brand-blue-dark)">展览与应用</h2>
@@ -113,10 +142,12 @@
         <img src="images/expo_p09.jpg" class="rounded-lg" alt="展览9"/>
         <img src="images/expo_p10.jpg" class="rounded-lg" alt="展览10"/>
       </div>
+      <!-- 若首页已放 AIGC，可删掉此块 -->
       <video class="w-full rounded-xl video-shadow" src="videos/aigc_en.mp4" poster="images/aigc_en.jpg" controls></video>
     </div>
   </section>
 
+  <!-- 联系方式 / Footer -->
   <section id="contact" class="py-14 md:py-20" style="background:var(--brand-blue-dark)">
     <div class="container mx-auto px-4 md:px-8 text-white">
       <h2 class="text-2xl md:text-3xl font-bold mb-4">联系与致谢</h2>
