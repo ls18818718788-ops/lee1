@@ -3,131 +3,212 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>毕业作品展示｜蓝橙主题</title>
+  <title>毕业作品展示｜天蓝·阳光橙</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
   <style>
     :root{
-      --brand-blue:#0ea5e9;
-      --brand-blue-dark:#0369a1;
-      --brand-orange:#f97316;
-      --brand-orange-dark:#9a3412;
+      /* 天蓝 & 阳光橙（更通透、对比适中） */
+      --brand-blue:#38bdf8;        /* sky-400 */
+      --brand-blue-deep:#0ea5e9;   /* sky-500 用作标题 */
+      --brand-orange:#f59e0b;      /* amber-500 作为阳光橙 */
+      --brand-orange-deep:#d97706; /* amber-600 悬停/强调 */
     }
     html,body{font-family:'Noto Sans SC',system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;}
     .brand-gradient{background: linear-gradient(135deg,var(--brand-blue) 0%, var(--brand-orange) 100%);}    
-    .video-shadow{box-shadow:0 10px 30px rgba(3,105,161,.25);}    
+    .video-shadow{box-shadow:0 10px 30px rgba(2,132,199,.20);}    
+    .card{background:#fff;border:1px solid rgba(2,132,199,.08);box-shadow:0 8px 24px rgba(2,132,199,.08)}
+    /* 快速导航 */
+    .quick-nav{position:fixed;right:16px;bottom:80px;z-index:60}
+    .quick-nav a{display:flex;align-items:center;justify-content:center;width:42px;height:42px;border-radius:12px;border:1px solid rgba(2,132,199,.25);background:#fff;box-shadow:0 8px 24px rgba(2,132,199,.12)}
+    .quick-nav a:hover{background:linear-gradient(135deg,var(--brand-blue) 0%, var(--brand-orange) 100%);color:#fff;border-color:transparent}
+    @media (max-width: 768px){.quick-nav{display:none}}
+    html{scroll-behavior:smooth}
   </style>
 </head>
-<body class="bg-gray-50 text-gray-800">
+<body class="bg-white text-gray-800">
+  <!-- 顶部导航（极简） -->
   <header class="sticky top-0 z-50 bg-white/80 backdrop-blur border-b">
     <nav class="container mx-auto px-4 md:px-8 py-3 flex items-center justify-between">
-      <a href="#home" class="flex items-center space-x-2">
-        <span class="inline-block w-3 h-3 rounded-full" style="background:var(--brand-orange)"></span>
-        <span class="text-lg md:text-xl font-bold" style="color:var(--brand-blue-dark)">毕业作品展示</span>
+      <a href="#home" class="flex items-center gap-2">
+        <span class="inline-block w-2.5 h-2.5 rounded-full" style="background:var(--brand-orange)"></span>
+        <span class="text-lg md:text-xl font-bold" style="color:var(--brand-blue-deep)">毕业作品展示</span>
       </a>
-      <div class="hidden md:flex items-center space-x-6 text-sm font-medium">
-        <a href="#intro" class="hover:text-sky-700">项目简介</a>
+      <div class="hidden md:flex items-center gap-6 text-sm font-medium">
+        <a href="#intro" class="hover:text-sky-700">简介</a>
         <a href="#research" class="hover:text-sky-700">调研</a>
         <a href="#avatar" class="hover:text-sky-700">数字人</a>
         <a href="#experience" class="hover:text-sky-700">体验/水下</a>
-        <a href="#exhibition" class="hover:text-sky-700">展览与应用</a>
+        <a href="#exhibition" class="hover:text-sky-700">展览</a>
         <a href="#contact" class="hover:text-sky-700">联系</a>
       </div>
     </nav>
   </header>
 
-  <!-- Hero -->
+  <!-- 首屏 Hero：大留白、天蓝橙渐变、16:9 视频 -->
   <section id="home" class="brand-gradient text-white">
-    <div class="container mx-auto px-4 md:px-8 py-14 md:py-20 grid md:grid-cols-2 gap-8 items-center">
+    <div class="container mx-auto px-4 md:px-8 py-16 md:py-24 grid md:grid-cols-2 gap-12 items-center">
       <div class="space-y-5">
-        <h1 class="text-3xl md:text-5xl font-extrabold leading-tight">非遗 × 数字人 × 沉浸体验</h1>
-        <p class="text-white/90 md:text-lg">以蓝橙为主色的毕业作品网页，聚焦研究调研、数字人设计与跨场景应用，结合体验设计、水下影像与展览实践。</p>
+        <p class="uppercase tracking-widest text-white/80 text-xs">Graduation Portfolio</p>
+        <h1 class="text-3xl md:text-5xl font-extrabold leading-tight drop-shadow">
+          天蓝 · 阳光橙｜大气简洁的作品展示
+        </h1>
+        <p class="text-white/90 md:text-lg max-w-xl">聚焦调研过程、数字人设计与跨场景应用；通过体验与水下影像，构建具身叙事的观展路径。</p>
+        <div class="flex flex-wrap gap-2">
+          <span class="px-3 py-1 rounded-full bg-white/15 border border-white/25 text-xs">AIGC</span>
+          <span class="px-3 py-1 rounded-full bg-white/15 border border-white/25 text-xs">XR</span>
+          <span class="px-3 py-1 rounded-full bg-white/15 border border-white/25 text-xs">Embodied</span>
+        </div>
       </div>
       <div>
-        <video class="w-full rounded-xl video-shadow aspect-video" src="videos/hero.mp4" poster="images/hero_poster.jpg" autoplay muted loop playsinline></video>
+        <video class="w-full rounded-xl video-shadow aspect-video" src="videos/hero.mp4" poster="https://images.unsplash.com/photo-1518770660439-4636190af475?w=1600&auto=format&fit=crop&q=70" autoplay muted loop playsinline></video>
       </div>
     </div>
   </section>
 
-  <!-- 调研 -->
-  <section id="research" class="bg-gray-50 py-14 md:py-20">
-    <div class="container mx-auto px-4 md:px-8">
-      <h2 class="text-2xl md:text-3xl font-bold mb-6" style="color:var(--brand-blue-dark)">前期调研</h2>
+  <!-- 快速导航（桌面端） -->
+  <div class="quick-nav hidden md:flex flex-col gap-2">
+    <a href="#home" title="首页">🏠</a>
+    <a href="#intro" title="简介">📄</a>
+    <a href="#research" title="调研">🔎</a>
+    <a href="#avatar" title="数字人">🧩</a>
+    <a href="#experience" title="体验/水下">🌊</a>
+    <a href="#exhibition" title="展览">🏛️</a>
+    <a href="#contact" title="联系">✉️</a>
+    <a href="#home" title="回到顶部">⬆️</a>
+  </div>
+
+  <!-- 项目简介：极简三卡片 -->
+  <section id="intro" class="bg-white">
+    <div class="container mx-auto px-4 md:px-8 py-14 md:py-20">
+      <h2 class="text-2xl md:text-3xl font-bold mb-3" style="color:var(--brand-blue-deep)">项目简介</h2>
+      <p class="text-gray-600 max-w-3xl">在此用 120–180 字概括核心命题、方法与成果：从“身体驱动—沉浸体验—文化认同—活态传承”的链式机制，落到数字人设计与多场景应用，配合展览转化与跨语种传播。</p>
+      <div class="mt-8 grid md:grid-cols-3 gap-6">
+        <div class="p-6 rounded-2xl card">
+          <h3 class="font-semibold mb-2 text-gray-900">研究关键词</h3>
+          <p class="text-gray-600 text-sm">数字非遗、具身认知、AIGC、XR、跨语种传播、沉浸体验</p>
+        </div>
+        <div class="p-6 rounded-2xl card">
+          <h3 class="font-semibold mb-2 text-gray-900">产出清单</h3>
+          <p class="text-gray-600 text-sm">视频 9、展览照 10、水下照 5–6、数字人原图 1</p>
+        </div>
+        <div class="p-6 rounded-2xl card">
+          <h3 class="font-semibold mb-2 text-gray-900">配色系统</h3>
+          <p class="text-gray-600 text-sm">天蓝（科技/空间） + 阳光橙（活力/行动），黑白为中性底</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 调研（视频16:9 + 照片4:3） -->
+  <section id="research" class="bg-sky-50/40">
+    <div class="container mx-auto px-4 md:px-8 py-14 md:py-20">
+      <div class="flex items-end justify-between mb-6">
+        <h2 class="text-2xl md:text-3xl font-bold" style="color:var(--brand-blue-deep)">前期调研</h2>
+        <span class="text-sm text-gray-500">视频 2 · 照片 5</span>
+      </div>
       <div class="grid md:grid-cols-2 gap-6 mb-8">
-        <video class="w-full rounded-xl video-shadow aspect-video" src="videos/research_01.mp4" poster="images/research_p01.jpg" controls></video>
-        <video class="w-full rounded-xl video-shadow aspect-video" src="videos/research_02.mp4" poster="images/research_p02.jpg" controls></video>
+        <video class="w-full rounded-xl video-shadow aspect-video" src="videos/research_01.mp4" poster="https://images.unsplash.com/photo-1526378722484-bd91ca387e72?w=1200&auto=format&fit=crop&q=70" controls></video>
+        <video class="w-full rounded-xl video-shadow aspect-video" src="videos/research_02.mp4" poster="https://images.unsplash.com/photo-1551836022-4c4c79ecde51?w=1200&auto=format&fit=crop&q=70" controls></video>
       </div>
       <div class="grid grid-cols-2 md:grid-cols-5 gap-4">
-        <img src="images/research_p01.jpg" class="rounded-lg aspect-[4/3] object-cover" alt="调研1"/>
-        <img src="images/research_p02.jpg" class="rounded-lg aspect-[4/3] object-cover" alt="调研2"/>
-        <img src="images/research_p03.jpg" class="rounded-lg aspect-[4/3] object-cover" alt="调研3"/>
-        <img src="images/research_p04.jpg" class="rounded-lg aspect-[4/3] object-cover" alt="调研4"/>
-        <img src="images/research_p05.jpg" class="rounded-lg aspect-[4/3] object-cover" alt="调研5"/>
+        <img class="rounded-xl aspect-[4/3] object-cover" src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1200&auto=format&fit=crop&q=70" alt="调研1"/>
+        <img class="rounded-xl aspect-[4/3] object-cover" src="images/research_p02.jpg" alt="调研2"/>
+        <img class="rounded-xl aspect-[4/3] object-cover" src="images/research_p03.jpg" alt="调研3"/>
+        <img class="rounded-xl aspect-[4/3] object-cover" src="images/research_p04.jpg" alt="调研4"/>
+        <img class="rounded-xl aspect-[4/3] object-cover" src="images/research_p05.jpg" alt="调研5"/>
       </div>
     </div>
   </section>
 
-  <!-- 数字人 -->
-  <section id="avatar" class="bg-white py-14 md:py-20">
-    <div class="container mx-auto px-4 md:px-8">
-      <h2 class="text-2xl md:text-3xl font-bold mb-6" style="color:var(--brand-blue-dark)">数字人设计与应用</h2>
+  <!-- 数字人（原图 + 中文/泰语应用视频） -->
+  <section id="avatar" class="bg-white">
+    <div class="container mx-auto px-4 md:px-8 py-14 md:py-20">
+      <div class="flex items-end justify-between mb-6">
+        <h2 class="text-2xl md:text-3xl font-bold" style="color:var(--brand-blue-deep)">数字人设计与应用</h2>
+        <span class="text-sm text-gray-500">原图 1 · 中文视频 1 · 泰国应用视频 1</span>
+      </div>
       <div class="grid lg:grid-cols-3 gap-6">
-        <img class="w-full rounded-xl video-shadow aspect-[4/3] object-cover" src="images/avatar_original.jpg" alt="数字人原图"/>
-        <video class="w-full rounded-xl video-shadow aspect-video" src="videos/avatar_cn.mp4" poster="images/avatar_cn.jpg" controls></video>
-        <video class="w-full rounded-xl video-shadow aspect-video" src="videos/avatar_th_app.mp4" poster="images/avatar_th.jpg" controls></video>
+        <figure class="rounded-2xl overflow-hidden card">
+          <img class="w-full aspect-[4/3] object-cover" src="https://images.unsplash.com/photo-1542751371-adc38448a05e?w=1400&auto=format&fit=crop&q=70" alt="数字人原图"/>
+          <figcaption class="p-3 text-xs text-gray-500">数字人原图（4:3）</figcaption>
+        </figure>
+        <video class="w-full rounded-2xl video-shadow aspect-video" src="videos/avatar_cn.mp4" poster="images/avatar_cn.jpg" controls></video>
+        <video class="w-full rounded-2xl video-shadow aspect-video" src="videos/avatar_th_app.mp4" poster="images/avatar_th.jpg" controls></video>
       </div>
     </div>
   </section>
 
-  <!-- 体验与水下 -->
-  <section id="experience" class="bg-gray-50 py-14 md:py-20">
-    <div class="container mx-auto px-4 md:px-8">
-      <h2 class="text-2xl md:text-3xl font-bold mb-6" style="color:var(--brand-blue-dark)">体验与水下影像</h2>
+  <!-- 体验与水下（视频16:9 + 照片4:3） -->
+  <section id="experience" class="bg-sky-50/40">
+    <div class="container mx-auto px-4 md:px-8 py-14 md:py-20">
+      <div class="flex items-end justify-between mb-6">
+        <h2 class="text-2xl md:text-3xl font-bold" style="color:var(--brand-blue-deep)">体验与水下影像</h2>
+        <span class="text-sm text-gray-500">体验视频 1 · 水下视频 1 · 照片 5–6</span>
+      </div>
       <div class="grid md:grid-cols-2 gap-6 mb-8">
-        <video class="w-full rounded-xl video-shadow aspect-video" src="videos/experience.mp4" poster="images/experience.jpg" controls></video>
-        <video class="w-full rounded-xl video-shadow aspect-video" src="videos/underwater.mp4" poster="images/underwater.jpg" controls></video>
+        <video class="w-full rounded-2xl video-shadow aspect-video" src="videos/experience.mp4" poster="https://images.unsplash.com/photo-1516259762381-22954d7d3ad2?w=1400&auto=format&fit=crop&q=70" controls></video>
+        <video class="w-full rounded-2xl video-shadow aspect-video" src="videos/underwater.mp4" poster="https://images.unsplash.com/photo-1544551763-7ef4200adf4d?w=1400&auto=format&fit=crop&q=70" controls></video>
       </div>
       <div class="grid grid-cols-2 md:grid-cols-6 gap-4">
-        <img src="images/under_p01.jpg" class="rounded-lg aspect-[4/3] object-cover" alt="水下1"/>
-        <img src="images/under_p02.jpg" class="rounded-lg aspect-[4/3] object-cover" alt="水下2"/>
-        <img src="images/under_p03.jpg" class="rounded-lg aspect-[4/3] object-cover" alt="水下3"/>
-        <img src="images/under_p04.jpg" class="rounded-lg aspect-[4/3] object-cover" alt="水下4"/>
-        <img src="images/under_p05.jpg" class="rounded-lg aspect-[4/3] object-cover" alt="水下5"/>
-        <img src="images/under_p06.jpg" class="rounded-lg aspect-[4/3] object-cover" alt="水下6"/>
+        <img class="w-full rounded-xl aspect-[4/3] object-cover" src="images/under_p01.jpg" alt="水下1"/>
+        <img class="w-full rounded-xl aspect-[4/3] object-cover" src="images/under_p02.jpg" alt="水下2"/>
+        <img class="w-full rounded-xl aspect-[4/3] object-cover" src="images/under_p03.jpg" alt="水下3"/>
+        <img class="w-full rounded-xl aspect-[4/3] object-cover" src="images/under_p04.jpg" alt="水下4"/>
+        <img class="w-full rounded-xl aspect-[4/3] object-cover" src="images/under_p05.jpg" alt="水下5"/>
+        <img class="w-full rounded-xl aspect-[4/3] object-cover" src="images/under_p06.jpg" alt="水下6"/>
       </div>
     </div>
   </section>
 
-  <!-- 展览与应用 -->
-  <section id="exhibition" class="bg-white py-14 md:py-20">
-    <div class="container mx-auto px-4 md:px-8">
-      <h2 class="text-2xl md:text-3xl font-bold mb-6" style="color:var(--brand-blue-dark)">展览与应用</h2>
+  <!-- 展览与应用（视频16:9 + 展览10张 4:3 + AIGC EN） -->
+  <section id="exhibition" class="bg-white">
+    <div class="container mx-auto px-4 md:px-8 py-14 md:py-20">
+      <div class="flex items-end justify-between mb-6">
+        <h2 class="text-2xl md:text-3xl font-bold" style="color:var(--brand-blue-deep)">展览与场景应用</h2>
+        <span class="text-sm text-gray-500">展览视频 1 · 照片 10 · 应用视频 1 · AIGC(EN)</span>
+      </div>
       <div class="grid md:grid-cols-2 gap-6 mb-8">
-        <video class="w-full rounded-xl video-shadow aspect-video" src="videos/exhibition.mp4" poster="images/exhibition.jpg" controls></video>
-        <video class="w-full rounded-xl video-shadow aspect-video" src="videos/application.mp4" poster="images/application.jpg" controls></video>
+        <video class="w-full rounded-2xl video-shadow aspect-video" src="videos/exhibition.mp4" poster="images/exhibition.jpg" controls></video>
+        <video class="w-full rounded-2xl video-shadow aspect-video" src="videos/application.mp4" poster="images/application.jpg" controls></video>
       </div>
       <div class="grid grid-cols-2 md:grid-cols-5 gap-4 mb-8">
-        <img src="images/expo_p01.jpg" class="rounded-lg aspect-[4/3] object-cover" alt="展览1"/>
-        <img src="images/expo_p02.jpg" class="rounded-lg aspect-[4/3] object-cover" alt="展览2"/>
-        <img src="images/expo_p03.jpg" class="rounded-lg aspect-[4/3] object-cover" alt="展览3"/>
-        <img src="images/expo_p04.jpg" class="rounded-lg aspect-[4/3] object-cover" alt="展览4"/>
-        <img src="images/expo_p05.jpg" class="rounded-lg aspect-[4/3] object-cover" alt="展览5"/>
-        <img src="images/expo_p06.jpg" class="rounded-lg aspect-[4/3] object-cover" alt="展览6"/>
-        <img src="images/expo_p07.jpg" class="rounded-lg aspect-[4/3] object-cover" alt="展览7"/>
-        <img src="images/expo_p08.jpg" class="rounded-lg aspect-[4/3] object-cover" alt="展览8"/>
-        <img src="images/expo_p09.jpg" class="rounded-lg aspect-[4/3] object-cover" alt="展览9"/>
-        <img src="images/expo_p10.jpg" class="rounded-lg aspect-[4/3] object-cover" alt="展览10"/>
+        <img class="rounded-xl aspect-[4/3] object-cover" src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=1200&auto=format&fit=crop&q=70" alt="展览1"/>
+        <img class="rounded-xl aspect-[4/3] object-cover" src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?w=1200&auto=format&fit=crop&q=70" alt="展览2"/>
+        <img class="rounded-xl aspect-[4/3] object-cover" src="https://images.unsplash.com/photo-1500534623283-312aade485b7?w=1200&auto=format&fit=crop&q=70" alt="展览3"/>
+        <img class="rounded-xl aspect-[4/3] object-cover" src="images/expo_p04.jpg" alt="展览4"/>
+        <img class="rounded-xl aspect-[4/3] object-cover" src="images/expo_p05.jpg" alt="展览5"/>
+        <img class="rounded-xl aspect-[4/3] object-cover" src="images/expo_p06.jpg" alt="展览6"/>
+        <img class="rounded-xl aspect-[4/3] object-cover" src="images/expo_p07.jpg" alt="展览7"/>
+        <img class="rounded-xl aspect-[4/3] object-cover" src="images/expo_p08.jpg" alt="展览8"/>
+        <img class="rounded-xl aspect-[4/3] object-cover" src="images/expo_p09.jpg" alt="展览9"/>
+        <img class="rounded-xl aspect-[4/3] object-cover" src="images/expo_p10.jpg" alt="展览10"/>
       </div>
-      <video class="w-full rounded-xl video-shadow aspect-video" src="videos/aigc_en.mp4" poster="images/aigc_en.jpg" controls></video>
+      <div class="rounded-2xl p-4 card border-t-4" style="border-top-color:var(--brand-orange)">
+        <h3 class="font-semibold mb-2" style="color:var(--brand-orange)">AIGC Video (EN)</h3>
+        <video class="w-full rounded-xl video-shadow aspect-video" src="videos/aigc_en.mp4" poster="images/aigc_en.jpg" controls></video>
+      </div>
     </div>
   </section>
 
-  <!-- 联系方式 -->
-  <section id="contact" class="py-14 md:py-20" style="background:var(--brand-blue-dark)">
+  <!-- 联系方式 / Footer -->
+  <section id="contact" class="py-16 md:py-20" style="background:var(--brand-blue-deep)">
     <div class="container mx-auto px-4 md:px-8 text-white">
-      <h2 class="text-2xl md:text-3xl font-bold mb-4">联系与致谢</h2>
-      <p class="text-white/90 mb-6">在此放置导师、合作院校与展览支持单位信息；可添加二维码或邮箱。</p>
-      <a href="mailto:your-email@example.com" class="px-6 py-3 bg-orange-500 hover:bg-orange-600 rounded-lg font-semibold">发送邮件</a>
+      <div class="grid md:grid-cols-2 gap-8 items-center">
+        <div>
+          <h2 class="text-2xl md:text-3xl font-bold mb-2">联系与致谢</h2>
+          <p class="text-white/90">在此放置导师信息、合作院校与展览支持单位等；可添加二维码与邮箱。</p>
+        </div>
+        <div class="bg-white/10 rounded-2xl p-4 md:p-6">
+          <form class="grid grid-cols-1 gap-3">
+            <input class="px-3 py-2 rounded bg-white text-gray-800" placeholder="姓名 / Name"/>
+            <input class="px-3 py-2 rounded bg-white text-gray-800" placeholder="邮箱 / Email"/>
+            <textarea rows="3" class="px-3 py-2 rounded bg-white text-gray-800" placeholder="留言 / Message"></textarea>
+            <button type="button" class="justify-self-start px-4 py-2 rounded-lg font-semibold text-white" style="background:var(--brand-orange)">提交 / Submit</button>
+          </form>
+        </div>
+      </div>
+      <div class="mt-10 text-sm text-white/80">© 2025 毕业作品展示｜天蓝·阳光橙</div>
     </div>
   </section>
 </body>
